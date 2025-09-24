@@ -39,7 +39,7 @@ Wed Sep 24 09:56:00 2025
 
 * **Memory-Usage**: used memory / total memory
 
-  * Example: `15MiB / 49140MiB` means only 15MB is in use, almost all memory is available.
+  * Example: `69MiB /  24564MiB` means only 69MB is in use, almost all memory is available.
 * **GPU-Util**: GPU utilization rate
 
   * Example: `0%` means the GPU is idle.
