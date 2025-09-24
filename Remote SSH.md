@@ -12,7 +12,7 @@ This guide explains how to use Visual Studio Code (VS Code) to connect to a remo
 ---
 ## 2. remote
 ```bash
-ssh root_name@xx.xx.xx.xx -p 22
+ssh user_name@xx.xx.xx.xx -p 22
 ```
 ![remote_ssh](./image/remote.png)
 
