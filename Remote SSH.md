@@ -22,7 +22,6 @@ This guide explains how to use Visual Studio Code (VS Code) to connect to a remo
      User <username>
      Port 22
    ```
-````
 
 3. (Optional) If you use password login, you will be asked each time.
    If using a private key, add:
