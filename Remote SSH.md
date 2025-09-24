@@ -34,11 +34,16 @@ This guide explains how to use Visual Studio Code (VS Code) to connect to a remo
 
 ## 3. Connect from VS Code
 
+### 1. Command
+
 1. Open VS Code.
 2. Press **F1** (or `Ctrl+Shift+P`).
 3. Type and select **Remote-SSH: Connect to Host...**.
 4. Choose the configured host (e.g., `myserver`).
 5. Enter your password (if required).
+
+### 2. Graphical interface
+1.![remote_ssh_install](./image/remote_ssh_install.png)
 
 ---
 
