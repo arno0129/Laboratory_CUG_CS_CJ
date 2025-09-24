@@ -7,7 +7,7 @@ This guide explains how to use Visual Studio Code (VS Code) to connect to a remo
 # Graphical interface
 
 1.remote_ssh_install![remote_ssh_install](./image/remote_ssh_install.png)
-2.remote_ssh![remote_ssh](./image/remote_ssh.png)
+2.remote![remote_ssh](./image/remote.png)
 
 
 
