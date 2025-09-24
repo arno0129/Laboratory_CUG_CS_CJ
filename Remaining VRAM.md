@@ -2,13 +2,7 @@
 
 Before running deep learning tasks on the server, it is important to check the available GPU memory to ensure sufficient resources. Follow the steps below:
 
-## 1. Log in to the server
-
-```bash
-ssh username@server_ip
-```
-
-## 2. Check GPU status
+## 1. Check GPU status
 
 Use the `nvidia-smi` command:
 
@@ -19,19 +13,29 @@ nvidia-smi
 ### Example output
 
 ```
+Wed Sep 24 09:56:00 2025       
 +-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
-+-----------------------------------------+------------------------+----------------------+
+| NVIDIA-SMI 570.153.02             Driver Version: 570.153.02     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
 | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
 |                                         |                        |               MIG M. |
 |=========================================+========================+======================|
-|   0  NVIDIA GeForce RTX 4090 D      Off |   00000000:2A:00.0 Off |                  Off |
-| 30%   32C    P8             18W /  425W |   15MiB / 49140MiB |      0%      Default |
+|   0  NVIDIA GeForce RTX 4090        Off |   00000000:D8:00.0 Off |                  Off |
+| 31%   35C    P8             24W /  450W |      69MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A           34698      G   /usr/lib/xorg/Xorg                       58MiB |
 +-----------------------------------------------------------------------------------------+
 ```
 
-## 3. Key fields to check
+## 2. Key fields to check
 
 * **Memory-Usage**: used memory / total memory
 
@@ -40,12 +44,12 @@ nvidia-smi
 
   * Example: `0%` means the GPU is idle.
 
-## 4. Decide if you can use the GPU
+## 3. Decide if you can use the GPU
 
 * If **available memory** > memory required for your task, you can safely run it.
 * If GPU memory usage is already high, contact the responsible user or switch to another GPU.
 
-## 5. Useful commands
+## 4. Useful commands
 
 * **Monitor GPU status in real time**
 
