@@ -6,13 +6,20 @@ This guide explains how to use Visual Studio Code (VS Code) to connect to a remo
 
 # Graphical interface
 
-1.remote_ssh_install![remote_ssh_install](./image/remote_ssh_install.png)
-2.remote![remote_ssh](./image/remote.png)
+## 1. remote_ssh_install
+![remote_ssh_install](./image/remote_ssh_install.png)
+## 2. remote
+![remote_ssh](./image/remote.png)
+- Select the first save path
+![host](./image/host.png)
+## 3. Next
+- Type your password
+- Open Folder
 
 
+---
 
-
-
+# Command
 
 ## 1. Install Requirements
 - Install **Visual Studio Code** on your local machine: [Download VS Code](https://code.visualstudio.com/)
