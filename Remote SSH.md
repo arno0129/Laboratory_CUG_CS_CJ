@@ -10,7 +10,7 @@ This guide explains how to use Visual Studio Code (VS Code) to connect to a remo
 ![remote_ssh_install](./image/remote_ssh_install.png)
 ## 2. remote
 ```bash
-ssh root_name@xx.xx.xx.xx
+ssh root_name@xx.xx.xx.xx -p 22
 ```
 ![remote_ssh](./image/remote.png)
 ## 3. Select the first save path
