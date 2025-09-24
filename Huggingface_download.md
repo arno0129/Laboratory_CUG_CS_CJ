@@ -2,7 +2,6 @@
 
 This guide explains how to download the **LLaMA 2 (7B)** model from Hugging Face.
 ---
----
 # Do not change the settings in the first step at will, start from the second step
 # Recommended method B
 ---
