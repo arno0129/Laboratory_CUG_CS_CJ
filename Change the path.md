@@ -4,6 +4,7 @@ This document describes the steps to move and mount the Hugging Face cache direc
 
 ---
 
+
 ## 1. Confirm Current Cache Path
 The default Hugging Face cache path is usually:
 
