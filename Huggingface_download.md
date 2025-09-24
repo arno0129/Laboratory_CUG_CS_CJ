@@ -13,7 +13,7 @@ This guide explains how to download the **LLaMA 2 (7B)** model from Hugging Face
    ```bash
    sudo apt-get install git-lfs
    git lfs install
-````
+   ```
 
 4. Log in with your Hugging Face token:
 
