@@ -32,19 +32,19 @@
 Go to the [ModelScope Model Hub](https://www.modelscope.cn/models) and copy the model ID, e.g.:
 
 ```
-damo/nlp_structbert_sentence-similarity_chinese-base
+deepseek-ai/DeepSeek-R1-Distill-Llama-8B
 ```
 
 ### 2. Download via CLI
 
 ```bash
-modelscope download damo/nlp_structbert_sentence-similarity_chinese-base
+modelscope download --model deepseek-ai/DeepSeek-R1-Distill-Llama-8B
 ```
 
 ### 3. Specify a custom local directory
 
 ```bash
-modelscope download damo/nlp_structbert_sentence-similarity_chinese-base --local_dir ./my_models
+modelscope download --model deepseek-ai/DeepSeek-R1-Distill-Llama-8B --local_dir ./my_models/DeepSeek-R1-Distill-Llama-8B
 ```
 
 ---
@@ -56,19 +56,19 @@ modelscope download damo/nlp_structbert_sentence-similarity_chinese-base --local
 Go to the [ModelScope Dataset Hub](https://www.modelscope.cn/datasets) and copy the dataset ID, e.g.:
 
 ```
-damo/cv_coco_detection
+cais/wmdp
 ```
 
 ### 2. Download via CLI
 
 ```bash
-modelscope download damo/cv_coco_detection
+modelscope download --dataset cais/wmdp
 ```
 
 ### 3. Specify a custom local directory
 
 ```bash
-modelscope download damo/cv_coco_detection --local_dir ./my_datasets
+modelscope download --dataset cais/wmdp --local_dir ./my_datasets/wmdp
 ```
 
 ---
