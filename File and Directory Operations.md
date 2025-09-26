@@ -1,6 +1,6 @@
 # File and Directory Operations Guide
 
-This document explains how to create, delete, and rename files and directories in Linux, and how to edit files using the **nano editor**, including saving and exiting options.
+This document explains how to create, delete, and rename files and directories in Linux, and how to edit files using the **nano editor**, including saving, exiting, and common text-editing shortcuts.
 
 ---
 
@@ -69,28 +69,31 @@ Renames `olddir` to `newdir`.
 
 When you open a file with `nano filename.txt`, you will see shortcuts at the bottom of the screen (`^` means the **Ctrl** key).
 
-### 3.1 Save File
-
-```text
-Ctrl + O   (press Enter to confirm)
-```
-
-### 3.2 Save and Exit
-
-```text
-Ctrl + O   (save)
-Ctrl + X   (exit)
-```
-
-### 3.3 Exit Without Saving
-
-```text
-Ctrl + X   (then press N when asked to save)
-```
+* **Save file** → `Ctrl + O` (then press Enter to confirm)
+* **Save and exit** → `Ctrl + O` (save), then `Ctrl + X` (exit)
+* **Exit without saving** → `Ctrl + X`, then press **N** when prompted
 
 ---
 
-## 4. Summary
+## 4. Common Editing Shortcuts in nano
+
+| Action                      | Shortcut                                      | Notes                                                               |
+| --------------------------- | --------------------------------------------- | ------------------------------------------------------------------- |
+| **Cut selected text**       | `Ctrl + K`                                    | Cuts the current line or selected text (acts like "cut")            |
+| **Uncut / Paste**           | `Ctrl + U`                                    | Pastes the previously cut text                                      |
+| **Mark (start selection)**  | `Ctrl + ^`                                    | Sets a mark at the cursor position, move with arrows to select text |
+| **Copy selected text**      | `Alt + 6`                                     | Copies the selected text (without cutting)                          |
+| **Delete single character** | `Ctrl + D`                                    | Deletes the character under the cursor                              |
+| **Undo**                    | `Alt + U`                                     | Undo last action                                                    |
+| **Redo**                    | `Alt + E`                                     | Redo last undone action                                             |
+| **Search text**             | `Ctrl + W`                                    | Enter search term                                                   |
+| **Search and replace**      | `Ctrl + \\`                                   | Opens replace prompt                                                |
+| **Go to line/column**       | `Ctrl + _`                                    | Jump to specific line (and column)                                  |
+| **Select all (workaround)** | `Ctrl + ^` at top, then move cursor to bottom | nano has no single shortcut for "select all"; use mark+arrow keys   |
+
+---
+
+## 5. Summary
 
 * **File operations**:
 
@@ -111,3 +114,6 @@ Ctrl + X   (then press N when asked to save)
   * `Ctrl + X` → exit
   * `Ctrl + O` + `Ctrl + X` → save and exit
   * `Ctrl + X` → exit without saving (choose **N**)
+  * `Ctrl + K` → cut, `Ctrl + U` → paste
+  * `Alt + 6` → copy, `Ctrl + ^` → set mark (select text)
+  * `Ctrl + W` → search, `Ctrl + \\` → replace
