@@ -44,7 +44,7 @@ modelscope download --model deepseek-ai/DeepSeek-R1-Distill-Llama-8B
 ### 3. Specify a custom local directory
 
 ```bash
-modelscope download --model deepseek-ai/DeepSeek-R1-Distill-Llama-8B --local_dir ./my_models/DeepSeek-R1-Distill-Llama-8B
+modelscope download --model deepseek-ai/DeepSeek-R1-Distill-Llama-8B --local_dir ~/modelscope/my_models/DeepSeek-R1-Distill-Llama-8B
 ```
 
 ---
@@ -68,7 +68,7 @@ modelscope download --dataset cais/wmdp
 ### 3. Specify a custom local directory
 
 ```bash
-modelscope download --dataset cais/wmdp --local_dir ./my_datasets/wmdp
+modelscope download --dataset cais/wmdp --local_dir ~/modelscope/my_datasets/wmdp
 ```
 
 ---
