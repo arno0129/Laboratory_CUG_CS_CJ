@@ -1,5 +1,3 @@
-# ✅ **新版 README（可直接用于 GitHub，带完整格式）**
-
 # Tailscale Remote Access Guide
 
 > A simple, secure, zero-config method to access an internal server from anywhere — without public IP, port forwarding, or VPS.
