@@ -1,0 +1,192 @@
+# Tailscale Remote Access Guide  
+> A simple, secure, and zero-config approach to access an internal server from anywhere — without public IP, port forwarding, or VPS.
+
+This guide helps you connect to a private/internal server (e.g., home server, lab machine, on-prem machine) from **any external network** using **Tailscale**, a free and encrypted virtual private network that supports automatic NAT traversal.
+
+---
+
+## 🚀 Features
+
+- No need for public IP  
+- No need for port forwarding  
+- No need for VPS  
+- Works behind NAT / firewall  
+- End-to-end encrypted mesh network  
+- Free for personal use  
+- Access your server from anywhere (SSH, Jupyter, Web UI, APIs)
+
+---
+
+# 1. Install Tailscale on the Internal Server
+
+Run the following script to install Tailscale:
+
+```bash
+curl -fsSL https://tailscale.com/install.sh | sh
+````
+
+Start the Tailscale service:
+
+```bash
+sudo tailscale up
+```
+
+This command will output a login link such as:
+
+```
+https://login.tailscale.com/a/xxxxxxx
+```
+
+Open the link in your browser and log in (Google / GitHub / Microsoft supported).
+
+---
+
+# 2. Verify Server Connection
+
+Check your Tailscale-assigned IP:
+
+```bash
+tailscale ip
+```
+
+Expected output (example):
+
+```
+100.120.55.34
+fd7a:115c:a1e0:ab12:abcd:abcd:abcd:1234
+```
+
+The IPv4 address (`100.x.x.x`) is the one you'll use to remotely access the server.
+
+---
+
+# 3. Install Tailscale on Your Client Device
+
+Install on the external device you want to use for remote access:
+
+| Platform   | Download URL                                                     |
+| ---------- | ---------------------------------------------------------------- |
+| Windows    | [https://tailscale.com/download](https://tailscale.com/download) |
+| macOS      | [https://tailscale.com/download](https://tailscale.com/download) |
+| Linux      | Use same install script                                          |
+| Android    | Google Play: *Tailscale*                                         |
+| iOS/iPadOS | App Store: *Tailscale*                                           |
+
+Login with the **same** Tailscale account used on the server.
+
+Once logged in, you should see your internal server listed in the Tailscale dashboard.
+
+---
+
+# 4. SSH Into the Internal Server (From Any Network)
+
+Use the Tailscale IP obtained earlier:
+
+```bash
+ssh <username>@100.120.55.34
+```
+
+Congratulations — you are now inside your internal server from an external network, without any VPN configuration or port forwarding.
+
+---
+
+# 5. Optional: Automatically Start Tailscale on Boot
+
+Enable the Tailscale daemon:
+
+```bash
+sudo systemctl enable tailscaled
+sudo systemctl restart tailscaled
+```
+
+---
+
+# 6. Access Other Services (Jupyter / Web UI / APIs)
+
+If your internal server hosts local web services:
+
+| Local Service | Local Address                                  | Remote (Tailscale)                             |
+| ------------- | ---------------------------------------------- | ---------------------------------------------- |
+| JupyterLab    | [http://localhost:8888](http://localhost:8888) | [http://100.x.x.x:8888](http://100.x.x.x:8888) |
+| TensorBoard   | [http://localhost:6006](http://localhost:6006) | [http://100.x.x.x:6006](http://100.x.x.x:6006) |
+| Custom API    | [http://localhost:5000](http://localhost:5000) | [http://100.x.x.x:5000](http://100.x.x.x:5000) |
+
+No reverse proxy, no firewall edits — Tailscale handles the secure routing automatically.
+
+---
+
+# 7. Security Enhancement (Optional)
+
+Restrict SSH to accept **only Tailscale network connections**:
+
+1. Find your Tailscale IP (`100.x.x.x`)
+2. Edit `/etc/ssh/sshd_config`:
+
+```
+ListenAddress 100.120.55.34
+```
+
+3. Restart SSH:
+
+```bash
+sudo systemctl restart ssh
+```
+
+This ensures your SSH port is not exposed to the physical LAN or WAN, but only to authenticated Tailscale peers.
+
+---
+
+# 8. Troubleshooting
+
+### ✔ Tailscale command not found
+
+Run installation script again:
+
+```bash
+curl -fsSL https://tailscale.com/install.sh | sh
+```
+
+### ✔ Cannot access web services
+
+Make sure the service is bound to `0.0.0.0` instead of `localhost`
+(e.g., Jupyter needs `--ip 0.0.0.0`).
+
+---
+
+# 9. Summary
+
+Tailscale enables:
+
+* Private, secure access to internal servers
+* Zero configuration NAT traversal
+* Seamless multi-device connectivity
+* Stronger security than traditional VPN
+
+This method is ideal for:
+
+* Home labs
+* University lab servers
+* On-prem GPU servers
+* NAS / Raspberry Pi / Linux servers
+* Developers who need remote access without exposing ports
+
+---
+
+# License
+
+This guide is released under the MIT License.
+
+```
+
+---
+
+# 🙌 如果你愿意，我还能帮你：
+
+- 生成 **中文版 README**  
+- 为 GitHub 仓库自动生成目录（TOC）  
+- 分离成多文件文档（/docs/install.md, /docs/ssh.md）  
+- 添加 Markdown 图示（架构拓扑图，例如：外网→Tailscale→内网服务器）  
+- 美化 README（徽章、横幅、动画截图）
+
+需要我继续扩展吗？
+```
