@@ -159,30 +159,3 @@ Perfect for:
 * NAS / Linux servers
 * Developers needing remote access
 
----
-
-# License
-
-MIT License
-
----
-
-# 🎉 全格式已恢复！
-
-现在你复制到 GitHub：
-
-* 标题会显示
-* 表格会显示
-* 引用、代码块、分段都正常
-* 不会再被当作一整段代码
-
----
-
-如果你愿意，我可以：
-
-✅ 加目录（Table of Contents）
-✅ 增加网络拓扑图（Mermaid / PNG）
-✅ 自动生成“Quick Start”版本
-✅ 提供中文版 README
-
-需要哪一种？
